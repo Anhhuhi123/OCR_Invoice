@@ -1,5 +1,5 @@
-# Sử dụng Python 3.7 làm base image
-FROM python:3.7-slim
+# Sử dụng Python 3.11 làm base image
+FROM python:3.11-slim
 
 # Thiết lập working directory
 WORKDIR /app
