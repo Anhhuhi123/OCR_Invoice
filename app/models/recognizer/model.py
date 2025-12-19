@@ -3,7 +3,6 @@ import paddle
 from pathlib import Path
 from app.core.logger import logger
 
-
 class RecognitionModel:
     """Recognition model loader"""
     
@@ -24,7 +23,6 @@ class RecognitionModel:
             logger.info(f"Loading recognition model from {self.model_path}")
             logger.info(f"   - {model_file}")
             logger.info(f"   - {params_file}")
-            
             self.model = paddle.jit.load(str(self.model_path / "inference"))
             logger.info("Recognition model loaded successfully!")
             
