@@ -116,26 +116,11 @@ ocr_server/
 
 #### Bước 1: Copy model weights
 
-```bash
-cd /Users/macbook/Desktop/Kyanon/ocr_server
-
-# Cách 1: Dùng script tự động
-./setup_models.sh
-
-# Cách 2: Copy thủ công
-cp -r ../Model_det_small weights/
-cp -r ../Model_rec weights/
-```
-
 Kiểm tra models đã copy đúng chưa:
 ```bash
 ls -la weights/Model_det_small/
 ls -la weights/Model_rec/
 ```
-
-Phải có 2 files trong mỗi thư mục:
-- `inference.json` (định nghĩa model)
-- `inference.pdiparams` (trọng số model)
 
 #### Bước 2: Kích hoạt virtual environment
 
@@ -154,32 +139,16 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Quá trình cài đặt sẽ tải:
-- FastAPI và Uvicorn (web framework)
-- PaddlePaddle (AI framework)
-- OpenCV (xử lý ảnh)
-- Pydantic (validation)
-- Các thư viện hỗ trợ khác
-
 #### Bước 4: Cấu hình (tùy chọn)
 
 ```bash
-# Copy file cấu hình mẫu
+# Copy file cấu hình env vào
 cp .env.example .env
-
-# Chỉnh sửa nếu cần
-nano .env
 ```
 
 ## 🚀 Chạy server
 
-### Cách 1: Dùng script có sẵn (Đơn giản nhất)
-
-```bash
-./run.sh
-```
-
-### Cách 2: Dùng uvicorn (Linh hoạt)
+### Cách 1: Dùng uvicorn (Linh hoạt)
 
 ```bash
 # Development mode (tự động reload khi sửa code)
@@ -210,22 +179,6 @@ docker run -p 8000:8000 ocr-api
 ```
 
 ### Khi server chạy thành công
-
-Bạn sẽ thấy output:
-```
-============================================================
-Starting OCR API Server
-============================================================
-Loading Detection Model...
-✓ Detection model loaded successfully
-Loading Recognition Model...
-✓ Recognition model loaded successfully
-✓ OCR Service initialized
-============================================================
-Server startup completed successfully!
-API Documentation: http://localhost:8000/docs
-============================================================
-```
 
 Truy cập:
 - **Swagger UI**: http://localhost:8000/docs (Giao diện test API)
