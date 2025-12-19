@@ -48,5 +48,12 @@ Thumbs.db
 .coverage
 htmlcov/
 
-# Model weights (optional - uncomment if weights are large)
-# weights/
+# Test output files
+result*.png
+test_output*.png
+*.png
+*.jpg
+*.jpeg
+
+# Model weights
+weights/
