@@ -10,8 +10,6 @@ ENV PYTHONUNBUFFERED=1 \
 # Thiết lập working directory
 WORKDIR /app
 
-# Cài đặt các dependencies hệ thống cần thiết cho Linux
-# OpenCV và PaddlePaddle cần các thư viện này
 # Cài đặt các dependencies hệ thống cần thiết cho OpenCV và PaddlePaddle
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
