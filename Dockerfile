@@ -12,14 +12,14 @@ WORKDIR /app
 
 # Cài đặt các dependencies hệ thống cần thiết cho Linux
 # OpenCV và PaddlePaddle cần các thư viện này
+# Cài đặt các dependencies hệ thống cần thiết cho OpenCV và PaddlePaddle
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
     libxrender-dev \
     libgomp1 \
-    libgthread-2.0-0 \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
