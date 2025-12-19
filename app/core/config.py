@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
     
     # Model paths
-    BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent
     WEIGHTS_DIR: Path = BASE_DIR / "weights"
     DETECTOR_MODEL_PATH: Path = WEIGHTS_DIR / "Model_det_small"
     RECOGNIZER_MODEL_PATH: Path = WEIGHTS_DIR / "Model_rec"
