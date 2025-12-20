@@ -14,14 +14,12 @@ def run_detection(
 ) -> Tuple[np.ndarray, paddle.Tensor]:
     """
     Run detection on image
-    
     Args:
         det_model: Loaded detection model
         image_path: Path to input image
         resize_long: Maximum dimension for resizing
         thresh: Detection threshold
         box_thresh: Bounding box threshold
-        
     Returns:
         Tuple of (original_image, model_output)
     """
