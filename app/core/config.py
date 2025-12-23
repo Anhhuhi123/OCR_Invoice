@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     
     # API
     API_V1_PREFIX: str = "/api/v1"
+
+    # Authentication
+    API_KEY: str = "your-secret-api-key-change-this-in-production"
+    
     
     # Model paths
     BASE_DIR: Path = Path(__file__).resolve().parent.parent

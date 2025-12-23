@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 
 from app.core.config import settings
 from app.core.logger import logger
+from app.core.middleware import APIKeyMiddleware
 from app.api.v1.router import api_router
 from app.models.detector import DetectionModel
 from app.models.recognizer import RecognitionModel
@@ -82,6 +83,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# API Key Authentication Middleware 
+app.add_middleware(APIKeyMiddleware)
 
 # Include API router
 app.include_router(api_router, prefix=settings.API_V1_PREFIX)
