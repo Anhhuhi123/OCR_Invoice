@@ -1,6 +1,8 @@
 import uvicorn
 from fastapi import FastAPI
 from app.core.logger import logger
+from app.core.middleware import APIKeyMiddleware
+from app.api.v1.router import api_router
 from app.core.config import settings
 from contextlib import asynccontextmanager
 from app.models.detector import DetectionModel
@@ -65,7 +67,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
- 
+
+# API Key Authentication Middleware 
+app.add_middleware(APIKeyMiddleware)
+
 # Include API router
 app.include_router(api_router_v1, prefix=settings.API_V1_PREFIX)
 
