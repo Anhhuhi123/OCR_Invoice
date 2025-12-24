@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     # Application
     APP_NAME: str = "OCR Invoice API"
     APP_VERSION: str = "1.0.0"
-    DEBUG: bool = False
+    DESCRIPTION: str = "OCR Invoice API - Extract text and fields from invoice images"
     
     # API
     API_V1_PREFIX: str = "/api/v1"
@@ -43,10 +43,6 @@ class Settings(BaseSettings):
     EXPAND_RATIO_H: float = 0.2
     MIN_PAD_H: int = 3
     MAX_PAD_H: int = 15
-    
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
 
 
 settings = Settings()
