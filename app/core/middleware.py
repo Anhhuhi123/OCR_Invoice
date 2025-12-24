@@ -35,7 +35,7 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 content={
-                    "detail": "Missing API Key. Please provide X-API-Key in header."
+                    "detail": "Unauthorized access"
                 }
             )
         
@@ -45,7 +45,7 @@ class APIKeyMiddleware(BaseHTTPMiddleware):
             return JSONResponse(
                 status_code=status.HTTP_401_UNAUTHORIZED,
                 content={
-                    "detail": "Invalid API Key"
+                    "detail": "Unauthorized access"
                 }
             )
         

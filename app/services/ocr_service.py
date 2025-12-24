@@ -42,7 +42,7 @@ class OCRService:
         bboxes = extract_bboxes_from_output(
             output,
             image,
-            conf_threshold=settings.DETECTION_THRESH,
+            conf_threshold=settings.CONF_THRESH,
             expand_ratio_w=settings.EXPAND_RATIO_W,
             expand_ratio_h=settings.EXPAND_RATIO_H,
             min_pad_h=settings.MIN_PAD_H,

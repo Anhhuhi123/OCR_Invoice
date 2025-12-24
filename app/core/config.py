@@ -28,6 +28,7 @@ class Settings(BaseSettings):
     # Detection settings
     DETECTION_RESIZE_LONG: int = 960
     DETECTION_THRESH: float = 0.3
+    CONF_THRESH: float = 0.2
     DETECTION_BOX_THRESH: float = 0.6
     
     # Recognition settings
