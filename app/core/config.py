@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     API_V1_PREFIX: str = "/api/v1"
 
     # Authentication
-    API_KEY: str
+    API_KEY: str =""
     
     
     # Model paths

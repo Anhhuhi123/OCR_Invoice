@@ -29,7 +29,6 @@ RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy toàn bộ code vào container (bao gồm app/ và weights/)
-COPY .env .env
 COPY . .
 
 # Tạo non-root user để chạy ứng dụng (best practice cho security)
