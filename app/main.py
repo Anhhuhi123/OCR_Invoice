@@ -10,6 +10,7 @@ from app.services.ocr_service import OCRService
 from app.models.recognizer import RecognitionModel
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.router import api_router as api_router_v1
+from app.api.health import router as health_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -70,6 +71,9 @@ app.add_middleware(
 
 # API Key Authentication Middleware 
 app.add_middleware(APIKeyMiddleware)
+
+# Include health check router (no prefix, at root level)
+app.include_router(health_router)
 
 # Include API router
 app.include_router(api_router_v1, prefix=settings.API_V1_PREFIX)
