@@ -84,7 +84,7 @@ cp .env.example .env
 ```
 
 ### 2. Chạy server
-
+### 2.1. Bằng terminal
 ```bash
 # Development mode (auto-reload)
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
@@ -92,7 +92,15 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 # Production mode
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
 ```
+### 2.2 Bằng Docker
 
+```bash
+# Build image
+docker build -t ocr-api .
+
+# Chạy container
+docker run -p 8000:8000 ocr-api
+```
 Server chạy tại: http://localhost:8000
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
